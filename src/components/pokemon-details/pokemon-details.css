@@ -1,0 +1,138 @@
+#details-name {
+    font-family: 'Bebas Neue', cursive;
+    margin: 1rem;
+    font-size: 4.5rem;
+}
+
+#details-container {
+    background-color: #34495e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+#text-container {
+    width: 100%;
+    background-color: #c0392b;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3rem;
+}
+
+#details-type-container {
+    font-family: 'Bangers', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#ability-container {
+    background-color: #e74c3c;
+    border-radius: 10px;
+    padding: 1rem;
+    height: fit-content;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+#held-items {
+    background-color: #e74c3c;
+    border-radius: 10px;
+    padding: 1rem;
+    height: fit-content;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.standard-text {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.pokemon-image {
+    background-color: #2c3e50;
+    border-radius: 20px;
+    margin: 1rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+#moves-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: center;
+    background-color: #e74c3c;
+    border-radius: 10px;
+    padding: 1rem;
+    height: fit-content;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+#back {
+    color: white;
+    background-color: darkgray;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+#move-items-container {
+    display: flex;
+    text-align: left;
+    margin-left: -1rem;
+}
+
+.typeBoxDetails {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 7rem;
+    min-height: 3rem;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.default-rect {
+    height: 1.5rem;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* .red-rect {
+    background-color: red;
+}
+
+.yellow-rect {
+    background-color: yellow;
+}
+
+.blue-rect {
+    background-color: lightskyblue;
+} */
+
+.stat-name {
+    text-align: left;
+    padding-right: 1rem;
+    padding-bottom: 0.3rem;
+}
+
+#stat-table {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+}

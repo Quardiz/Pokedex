@@ -1,0 +1,134 @@
+/* #373b69 */
+#pokemon-container {
+    text-align: center;
+    background-color: #34495e;
+    /* width: 20rem;
+    height: 18rem; */
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+}
+
+@keyframes on-hover {
+    0% {
+        background-color: #34495e;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        background-color: #29527a;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+    }
+}
+
+#pokemon-container:hover {
+    animation-name: on-hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#pokemon-name {
+    font-family: 'Bebas Neue', cursive;
+    margin: 1rem;
+}
+
+#type-container {
+    font-family: 'Bangers', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#sprite-container {
+    /* background-color: rgb(92, 92, 92);
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); */
+    margin: 1rem;
+}
+
+.typeBox {
+    min-width: 4rem;
+    width: fit-content;
+    margin: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.flying {
+    background-color: lightskyblue;
+}
+
+.grass {
+    background-color: green;
+}
+
+.normal {
+    background-color: gainsboro;
+}
+
+.fire {
+    background-color: orange;
+}
+
+.water {
+    background-color: royalblue;
+}
+
+.bug {
+    background-color: springgreen;
+}
+
+.poison {
+    background-color: rgb(163, 80, 163);
+}
+
+.fighting {
+    background-color: red;
+}
+
+.ice {
+    background-color: lightblue;
+}
+
+.electric {
+    background-color: yellow;
+}
+
+.ground {
+    background-color: peru;
+}
+
+.psychic {
+    background-color: palevioletred;
+}
+
+.rock {
+    background-color: rgb(122, 100, 24);
+}
+
+.ghost {
+    background-color: rebeccapurple;
+}
+
+.dragon {
+    background-color: slateblue;
+}
+
+.steel {
+    background-color: lightsteelblue;
+}
+
+.dark {
+    background-color: darkslategray;
+}
+
+.fairy {
+    background-color: pink;
+}
+
+
