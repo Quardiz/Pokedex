@@ -16,10 +16,14 @@
 #image-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 2rem;
+}
+
+#big-image {
+    
 }
 
 #text-container {
@@ -133,6 +137,7 @@
 }
 
 #stat-table {
+    margin: 2rem;
     font-family: 'Bebas Neue', cursive;
     font-size: 30px;
 }

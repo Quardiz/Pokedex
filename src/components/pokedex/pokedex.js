@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Pokemon from '../pokemon/pokemon';
-import './pokedex.css';
-import Spinner from 'react-bootstrap/Spinner';
+import './pokedex.scss';
 import { observer } from 'mobx-react';
 class Pokedex extends Component {
 
@@ -13,7 +12,7 @@ class Pokedex extends Component {
     }
 
     componentDidMount(){
-        fetch('http://pokeapi.co/api/v2/pokemon/?limit=800')
+        fetch('http://pokeapi.co/api/v2/pokemon/?limit=386')
             .then(res => res.json())
             .then(json => {
                 this.setState({
@@ -32,7 +31,17 @@ class Pokedex extends Component {
                 </div>
                 </div>
         } else {
-            return <div>Loading data <Spinner animation="border"/></div>;
+            return <div className='loader'>
+                    <div className='ring'>
+                        <div className='ring'>
+                            <div className='ring'>
+                                <div className='ring'>
+                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>;
         }
     }
 }

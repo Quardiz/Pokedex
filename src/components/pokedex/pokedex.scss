@@ -1,0 +1,42 @@
+$c:#fdc789 #ff9050;
+$l: 13em;
+$f: .6;
+$r: (1 - $f)*25%;
+$p0: calc(#{$r} - 2px);
+$p1: calc(#{$r} - 1px);
+
+#pokedex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.loader {
+  display: grid;
+  place-content: center;
+  margin: 0;
+  height: 90vh;
+  width: 100vw;
+}
+
+.ring {
+  --f: 1;
+  width: $l; height: $l;
+  transform: scale(var(--f));
+  opacity: var(--f);
+  background: 
+      radial-gradient(circle at 50% $r, nth($c, 1) $p0, transparent $p1), 
+      radial-gradient(circle at 50% 100% - $r, nth($c, 2) $p0, transparent $p1);
+  animation: a 2s ease-in-out infinite;
+  
+  & > & {
+      --f: #{$f}
+    }
+}
+
+@keyframes a {
+  to { 
+    transform: scale(var(--f)) rotate(1.5turn) 
+  } 
+}
+

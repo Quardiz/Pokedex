@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './pokemon-details.css';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 export default class PokemonDetails extends Component {
     constructor(props){
         super(props);
@@ -50,17 +50,7 @@ export default class PokemonDetails extends Component {
                 {/* <Link id='back' to={{pathname: '/'}}>Go back</Link> */}
                 <h1 id='details-name'>{this.state.pokemon['name']}</h1>
                 <div id='image-container'>
-                    <table id='stat-table'>
-                        {this.state.pokemon.stats.map((slot) => <tr>
-                            <td class='stat-name'>{slot.stat.name}</td>
-                            <td class='base-stat'>{slot.base_stat}</td>
-                            <td class='rectangle-container'>
-                                <div class={'default-rect ' + getRectangle(slot.base_stat)} style={{width: slot.base_stat*1.5, backgroundColor: `rgba(${252 / (slot.base_stat / 10)}, 100, ${slot.base_stat * 1.8 }, 1)`}}>
-                                </div>
-                            </td>
-                        </tr>)}
-                    </table>
-                    <img class='pokemon-image' src={this.state.pokemon['sprites']['other']['official-artwork']['front_default']} alt='dream'></img>
+                    <img id='big-image' class='pokemon-image' src={this.state.pokemon['sprites']['other']['official-artwork']['front_default']} alt='dream'></img>
                     <div class='sprite-container'>
                         <img class='pokemon-image' id='front_default' alt={this.state.pokemon['name']} src={this.state.pokemon['sprites']['front_default']}></img>
                         <img class='pokemon-image' id='back_default' alt={this.state.pokemon['name']} src={this.state.pokemon['sprites']['back_default']}></img>
@@ -73,6 +63,16 @@ export default class PokemonDetails extends Component {
                 <div id='details-type-container'>
                     {this.state.pokemon['types'].map((type) => <div key={type['type']['name']} className={'typeBoxDetails ' + type['type']['name']} id={'type' + type['slot']}>{type['type']['name']}</div>)}
                 </div>
+                <table id='stat-table'>
+                    {this.state.pokemon.stats.map((slot) => <tr>
+                        <td class='stat-name'>{slot.stat.name}</td>
+                        <td class='base-stat'>{slot.base_stat}</td>
+                        <td class='rectangle-container'>
+                            <div class={'default-rect ' + getRectangle(slot.base_stat)} style={{width: slot.base_stat*1.5, backgroundColor: `rgba(${255 / (slot.base_stat / 35)}, 80, ${slot.base_stat * 1.8 }, ${slot.base_stat / 200})`}}>
+                            </div>
+                        </td>
+                    </tr>)}
+                </table>
                 <div id='text-container' class='standard-text'>
                     <div id='ability-container'>
                         <h2>Abilities</h2>
