@@ -19,7 +19,8 @@ ReactDOM.render(
             <header>
               <NavBar store={pokedexStore}/>
             </header>
-            <ObserverPokedex {...props} store={pokedexStore}/></div> }/>
+            <ObserverPokedex {...props} store={pokedexStore}/></div> }
+          />
           <Route path='/:id' component={ObserverPokemonDetails}/>
         </Switch>
       </Router>

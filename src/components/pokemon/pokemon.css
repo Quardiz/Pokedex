@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
 /* #373b69 */
 #pokemon-container {
     text-align: center;
@@ -5,11 +7,12 @@
     /* width: 20rem;
     height: 18rem; */
     margin: 1rem;
-    border-radius: 3px;
+    border-radius: 8px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     text-decoration: none;
     color: inherit;
+    width: 15rem;
 }
 
 @keyframes on-hover {
@@ -31,7 +34,9 @@
 
 #pokemon-name {
     font-family: 'Bebas Neue', cursive;
-    margin: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0rem;
 }
 
 #type-container {
@@ -46,7 +51,7 @@
     /* background-color: rgb(92, 92, 92);
     border-radius: 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); */
-    margin: 1rem;
+    margin: 0px;
 }
 
 .typeBox {
@@ -57,6 +62,14 @@
     padding-bottom: 1px;
     border-radius: 3px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+#pokedex-number {
+    /* font-family: 'Orbitron', sans-serif; */
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 .flying {

@@ -36,19 +36,27 @@ export default class PokemonDetails extends Component {
                     </div>;
             }
             
-            const getRectangle = (stat) => {
+            const getRectangleColor = (stat) => {
+                //`rgba(${255 / (stat / 35)}, 80, ${stat * 1.8 }, ${stat / 200})`
                 if(stat < 55){
-                    return 'red-rect';
+                    return `rgba(${255 / (35 / stat)}, 0, 1)`;
                 }
                 if(stat < 90){
-                    return 'yellow-rect';
+                    return `rgba(${255 / (stat / 35)}, ${stat * 1.8 }, 0, 1)`;
                 }
-                return 'blue-rect';
+                if(stat < 115){
+                    return `rgba(0, 100, ${stat * 1.8 }, 1)`
+                }
+                if(stat < 154) {
+                    return `rgba(50, ${stat * 1.8 }, ${stat * 1.8 }, 1)`;
+                }
+                return `rgba(${stat * 1}, ${stat * 1.8 }, ${stat * 1.8 }, 1)`;
             }
 
             return <div id='details-container'>
                 {/* <Link id='back' to={{pathname: '/'}}>Go back</Link> */}
-                <h1 id='details-name'>{this.state.pokemon['name']}</h1>
+                <p id='details-pokedex-number'>{'#' + this.state.pokemon['id']}</p>
+                <p id='details-name'>{this.state.pokemon['name']}</p>
                 <div id='image-container'>
                     <img id='big-image' class='pokemon-image' src={this.state.pokemon['sprites']['other']['official-artwork']['front_default']} alt='dream'></img>
                     <div class='sprite-container'>
@@ -68,7 +76,7 @@ export default class PokemonDetails extends Component {
                         <td class='stat-name'>{slot.stat.name}</td>
                         <td class='base-stat'>{slot.base_stat}</td>
                         <td class='rectangle-container'>
-                            <div class={'default-rect ' + getRectangle(slot.base_stat)} style={{width: slot.base_stat*1.5, backgroundColor: `rgba(${255 / (slot.base_stat / 35)}, 80, ${slot.base_stat * 1.8 }, ${slot.base_stat / 200})`}}>
+                            <div class={'default-rect'} style={{width: slot.base_stat*1.5, backgroundColor: getRectangleColor(slot.base_stat)}}>
                             </div>
                         </td>
                     </tr>)}

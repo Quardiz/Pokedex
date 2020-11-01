@@ -1,12 +1,23 @@
 import React, {Component} from 'react';
 import './pokemon.css';
 import {Link} from 'react-router-dom';
+import {cacheImages} from '../../utils'
 export default class Pokemon extends Component {
     constructor(props){
         super(props);
         this.state = {
             pokemon: null
         };
+        this.handleImageLoaded = this.handleImageLoaded.bind(this)
+        this.handleImageErrored = this.handleImageErrored.bind(this)
+    }
+
+    handleImageLoaded() {
+        this.props.store.pokecount += 1
+    }
+
+    handleImageErrored() {
+        this.props.store.pokecount += 1
     }
 
     componentDidMount(){
@@ -16,11 +27,8 @@ export default class Pokemon extends Component {
                 this.setState({
                     pokemon: json
                 });
-            });
-        
+            }).catch(err => console.log(err));
     }
-
-
 
     render(){
         
@@ -34,9 +42,15 @@ export default class Pokemon extends Component {
         } else {
             
             return <Link to={{pathname: '/' + this.state.pokemon['id']}} onClick={loadPokemonDetails} id='pokemon-container'>
-                <h1 id='pokemon-name'>{this.state.pokemon['name']}</h1>
+                <p id='pokedex-number'>{'#' + this.state.pokemon['id']}</p>
+                <p id='pokemon-name'>{this.state.pokemon['name']}</p>
                 <div id='sprite-container'>
-                    <img className='pokemon-image' alt={this.state.pokemon['name']} src={this.state.pokemon['sprites']['front_default']}></img>
+                    <img 
+                        onLoad={this.handleImageLoaded}
+                        onError={this.handleImageErrored}
+                        className='pokemon-image'
+                        alt={this.state.pokemon['name']}
+                        src={this.state.pokemon['sprites']['front_default']}></img>
                     {/* <img className='pokemon-image' alt={this.state.pokemon['name']}  src={this.state.pokemon['sprites']['back_default']}></img> */}
                 </div>
                 <div id='type-container'>

@@ -1,4 +1,4 @@
-$c:#fdc789 #ff9050;
+$c: #c6c09c #ffc98b #ffb284 #e79796;
 $l: 13em;
 $f: .6;
 $r: (1 - $f)*25%;
@@ -24,6 +24,8 @@ $p1: calc(#{$r} - 1px);
   width: $l; height: $l;
   transform: scale(var(--f));
   opacity: var(--f);
+  //background-image: url("../../assets/");
+  //background-image: url("https://www.freeiconspng.com/uploads/pokeball-pokemon-ball-red-clipart-13.png");
   background: 
       radial-gradient(circle at 50% $r, nth($c, 1) $p0, transparent $p1), 
       radial-gradient(circle at 50% 100% - $r, nth($c, 2) $p0, transparent $p1);
@@ -36,7 +38,7 @@ $p1: calc(#{$r} - 1px);
 
 @keyframes a {
   to { 
-    transform: scale(var(--f)) rotate(1.5turn) 
+    transform: scale(var(--f)) rotate(1turn) 
   } 
 }
 
