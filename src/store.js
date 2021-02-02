@@ -5,7 +5,8 @@ class Store {
     filteredList = [];
     pokemon = null;
     pokecount = 0;
-    limit = 800;
+    limit = 300;
+    filter = false;
 
     constructor() {
         makeObservable(this, {
@@ -14,11 +15,15 @@ class Store {
             pokemon: observable,
             pokecount: observable,
             showPokedex: computed,
-            limit: observable
+            limit: observable,
+            filter: observable
         })
     }
 
     get showPokedex() {
+        if(this.filter) {
+            return true;
+        }
         return this.pokecount === this.limit
     }
 }

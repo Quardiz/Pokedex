@@ -15,8 +15,15 @@ export default class NavBar extends Component {
     render() {
         const handleOnSubmit = (e) => {
             e.preventDefault();
+            
+            if(this.state.searchTerm == ''){
+                this.props.store.filter = true;
+                this.props.store.filteredList = this.props.store.pokemonList;
+                //this.setState({searchTerm: ''});
+            }
 
             if(this.state.searchTerm){
+                this.props.store.filter = true;
                 this.props.store.filteredList = this.props.store.pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()) );
                 console.log(this.props.store.filteredList);
                 //this.setState({searchTerm: ''});

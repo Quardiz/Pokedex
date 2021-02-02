@@ -46,11 +46,15 @@ class Pokedex extends Component {
 
     render() 
     {
+
+
     return <div>
             <div id='pokedex-container' style={this.props.store.showPokedex ? {} : {display: "none"}}>
                 {this.props.store.filteredList.map((pokemon) => <Pokemon store={this.props.store} key={pokemon.name} url={pokemon.url}/>)}
             </div>
-            <div className='loader' style={!this.props.store.showPokedex ? {} : {display: "none"}}>
+            
+            {this.props.store.filteredList.length === this.props.store.pokemonList.length && 
+                <div className='loader' style={!this.props.store.showPokedex ? {} : {display: "none"}}>
                 <div className='ring'>
                     <div className='ring'>
                         <div className='ring'>
@@ -66,6 +70,7 @@ class Pokedex extends Component {
             {/* <progress id="file" value={this.props.store.pokecount} max={this.props.store.limit}></progress> */}
             <ObserverLoader store={this.props.store}></ObserverLoader>
             </div>
+            }
         </div>;
     }
 }

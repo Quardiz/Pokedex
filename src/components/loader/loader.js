@@ -3,8 +3,8 @@ import { observer } from 'mobx-react'
 import './loader.css'
 class Loader extends React.Component {
     render() {
-        return <div id="progress-bar" style={{width: this.props.store.limit/4}}>
-        <div id='progress' style={{width: this.props.store.pokecount/4, height: '1rem'}}>
+        return <div id="progress-bar" style={{width: '200px'}}>
+        <div id='progress' style={{width: this.props.store.pokecount/this.props.store.limit*200, height: '1rem'}}>
 
         </div>
     </div>
