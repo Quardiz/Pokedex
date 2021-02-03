@@ -5,7 +5,7 @@ class Store {
     filteredList = [];
     pokemon = null;
     pokecount = 0;
-    limit = 300;
+    limit = 809;
     filter = false;
 
     constructor() {
@@ -24,7 +24,7 @@ class Store {
         if(this.filter) {
             return true;
         }
-        return this.pokecount === this.limit
+        return this.pokecount >= 151
     }
 }
 
